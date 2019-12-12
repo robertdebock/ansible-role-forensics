@@ -2,7 +2,7 @@ forensics
 =========
 
 <img src="https://docs.ansible.com/ansible-tower/3.2.4/html_ja/installandreference/_static/images/logo_invert.png" width="10%" height="10%" alt="Ansible logo" align="right"/>
-<a href="https://travis-ci.org/robertdebock/ansible-role-forensics"> <img src="https://travis-ci.org/robertdebock/ansible-role-forensics.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/"/> <img src="https://img.shields.io/ansible/quality/"/>
+<a href="https://travis-ci.org/robertdebock/ansible-role-forensics"> <img src="https://travis-ci.org/robertdebock/ansible-role-forensics.svg?branch=master" alt="Build status"/></a> <img src="https://img.shields.io/ansible/role/d/45300"/> <img src="https://img.shields.io/ansible/quality/45300"/>
 
 Install and configure forensics on your system.
 
@@ -49,21 +49,32 @@ forensics_local_storage_path: /tmp/forensics
 
 # A list of commands to run.
 forensics_command_list:
-  - command: ps -ef
-    destination: ps-ef.txt
-  - command: lsof
-    destination: lsof.txt
-  - command: systemctl status
-    destination: systmectl-status.txt
-  - command: netstat -an
-    destination: netstat-an.txt
-  - command: netstat-tulpen
-    destination: netstat-tulpen.txt
+  - journalctl -xe
+  - ps -ef
+  - lsof
+  - systemctl status
+  - netstat -an
+  - netstat -tulpen
 
-# A list of objects (directories) to collect.
-forensics_object_list:
-  - path: /var/log
-    destination: var/log
+# A list of directories to collect all files from.
+forensics_directory_list:
+  - /var/log
+  - /tmp
+  - /var/tmp
+  - /var/spool/cron
+  - /var/spool/anacron
+  - /etc/cron.d
+  - /etc/cron.daily
+  - /etc/cron.hourly
+  - /etc/cron.monthly
+  - /etc/cron.weekly
+  - /var/spool/at
+
+# A list of files to collect.
+forensics_file_list:
+  - /etc/passwd
+  - /etc/group
+  - /etc/shadow
 ```
 
 Requirements

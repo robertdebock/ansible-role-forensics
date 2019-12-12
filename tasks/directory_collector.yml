@@ -1,7 +1,12 @@
 ---
+- name: find files
+  find:
+    paths: "{{ object }}"
+  register: forensics_find_files
+
 - name: create storage directory
   file:
-    path: "{{ forensics_local_storage_path }}/{{ object | dirname }}"
+    path: "{{ forensics_local_storage_path }}/{{ object }}"
     state: directory
 
 - name: fetch files
