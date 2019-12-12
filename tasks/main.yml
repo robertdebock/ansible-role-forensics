@@ -11,14 +11,14 @@
   loop: "{{ forensics_object_list }}"
   loop_control:
     loop_var: object
-    label: "{{ item.path }}"
+    label: "{{ object.path }}"
 
 - name: collect command output
   include_tasks: command_collector.yml
   loop: "{{ forensics_command_list }}"
   loop_control:
     loop_var: object
-    label: "{{ item.command }}"
+    label: "{{ object.command }}"
 
 # - name: collect crontab files
 # - name: collect at files
