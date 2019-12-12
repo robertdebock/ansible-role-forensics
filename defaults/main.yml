@@ -1,0 +1,23 @@
+---
+# defaults file for forensics
+
+# A directory where collected data can be stored locally.
+forensics_local_storage_path: /tmp/forensics
+
+# A list of commands to run.
+forensics_command_list:
+  - command: ps -ef
+    destination: ps-ef.txt
+  - command: lsof
+    destination: lsof.txt
+  - command: systemctl status
+    destination: systmectl-status.txt
+  - command: netstat -an
+    destination: netstat-an.txt
+  - command: netstat-tulpen
+    destination: netstat-tulpen.txt
+
+# A list of objects (directories) to collect.
+forensics_object_list:
+  - path: /var/log
+    destination: var/log

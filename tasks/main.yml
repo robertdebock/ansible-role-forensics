@@ -1,0 +1,28 @@
+---
+# tasks file for forensics
+- name: create forensics_local_storage_path
+  file:
+    path: "{{ forensics_local_storage_path }}"
+    state: directory
+    mode: "0700"
+
+- name: collect files
+  include_tasks: file_collector.yml
+  loop: "{{ forensics_object_list }}"
+  loop_control:
+    loop_var: object
+    label: "{{ item.path }}"
+
+- name: collect command output
+  include_tasks: command_collector.yml
+  loop: "{{ forensics_command_list }}"
+  loop_control:
+    loop_var: object
+    label: "{{ item.command }}"
+
+# - name: collect crontab files
+# - name: collect at files
+# - name: collect history
+# - name: collect passwd, group and shadow
+# - name: collect authorized keys
+# - name: collect content of /tmp
