@@ -75,6 +75,21 @@ forensics_file_list:
   - /etc/passwd
   - /etc/group
   - /etc/shadow
+
+# A list of directories and patterns to collect.
+forensics_specific_file_list:
+  - path: /root
+    pattern: .authorized_keys
+  - path: /root
+    pattern: .bash_history
+  - path: /root
+    pattern: .history
+  - path: /home
+    pattern: .authorized_keys
+  - path: /home
+    pattern: .bash_history
+  - path: /home
+    pattern: .history
 ```
 
 Requirements
