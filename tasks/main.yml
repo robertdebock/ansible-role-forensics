@@ -1,8 +1,8 @@
 ---
 # tasks file for forensics
-- name: create forensics_local_storage_path
+- name: create {{ forensics_local_storage_path }}/{{ inventory_hostname_short }}
   file:
-    path: "{{ forensics_local_storage_path }}"
+    path: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}"
     state: directory
     mode: "0700"
 
@@ -24,5 +24,8 @@
   loop_control:
     loop_var: object
 
-# - name: collect history
-# - name: collect authorized keys
+- name: collect specific files in directories
+  include_tasks: specific_file_collector.yml
+  loop: "{{ forensics_specific_file_list }}"
+  loop_control:
+    loop_var: object

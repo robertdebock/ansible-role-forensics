@@ -1,17 +1,17 @@
 ---
 - name: collect commands
   block:
-    - name: run command
+    - name: run command {{ object }}
       command: "{{ object }}"
       changed_when: no
       register: forensics_run_command
-    - name: save output
+    - name: save output to {{ object | replace(' ','-') }}.txt
       copy:
         content: "{{ forensics_run_command.stdout }}"
-        dest: "{{ forensics_local_storage_path }}/{{ object | replace(' ','-') }}"
+        dest: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}/{{ object | replace(' ','-') }}.txt"
       delegate_to: localhost
       changed_when: no
   rescue:
     - name: rescue when command failed.
       debug:
-        msg: "Could not collect command"
+        msg: "Could not collect command {{ object }}"

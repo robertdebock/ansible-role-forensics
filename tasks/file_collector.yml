@@ -1,5 +1,5 @@
 ---
-- name: create storage directory
+- name: create storage directory {{ forensics_local_storage_path }}/{{ object | dirname }}
   file:
     path: "{{ forensics_local_storage_path }}/{{ object | dirname }}"
     state: directory
@@ -7,7 +7,8 @@
 - name: fetch files
   fetch:
     src: "{{ item.path }}"
-    dest: "{{ forensics_local_storage_path }}/{{ object }}"
+    dest: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}/{{ object }}/{{ item.path | basename }}"
+    flat: yes
   loop: "{{ forensics_find_files.files }}"
   loop_control:
     label: "{{ item.path }}"

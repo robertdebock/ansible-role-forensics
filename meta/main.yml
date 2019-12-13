@@ -35,6 +35,6 @@ galaxy_info:
   galaxy_tags:
     - forensics
     - centos
-    - rhel
+    - redhat
 
 dependencies: []
