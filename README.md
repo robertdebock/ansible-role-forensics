@@ -2,9 +2,9 @@
 
 Install and configure forensics on your system.
 
-|Travis|GitHub|Quality|Downloads|
-|------|------|-------|---------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-forensics.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-forensics)|[![github](https://github.com/robertdebock/ansible-role-forensics/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-forensics/actions)|[![quality](https://img.shields.io/ansible/quality/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![downloads](https://img.shields.io/ansible/role/d/45300)](https://galaxy.ansible.com/robertdebock/forensics)|
+|Travis|GitHub|Quality|Downloads|Version|
+|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-forensics.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-forensics)|[![github](https://github.com/robertdebock/ansible-role-forensics/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-forensics/actions)|[![quality](https://img.shields.io/ansible/quality/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![downloads](https://img.shields.io/ansible/role/d/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-forensics.svg)](https://github.com/robertdebock/ansible-role-forensics/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
