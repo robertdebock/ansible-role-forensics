@@ -4,7 +4,7 @@
   file:
     path: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}"
     state: directory
-    mode: "0700"
+    mode: "700"
 
 - name: collect files in directories
   include_tasks: directory_collector.yml
