@@ -1,0 +1,64 @@
+---
+- name: test if forensics_local_storage_path is set correctly
+  assert:
+    that:
+      - forensics_local_storage_path is defined
+      - forensics_local_storage_path | length > 0
+
+- name: test if forensics_command_list is set correctly
+  assert:
+    that:
+      - forensics_command_list is defined
+      - forensics_command_list | length > 0
+      - forensics_command_list is iterable
+
+- name: test if item in forensics_command_list is set correctly
+  assert:
+    that:
+      - item is defined
+      - item | length > 0
+  loop: "{{ forensics_command_list }}"
+
+- name: test if forensics_directory_list is set correctly
+  assert:
+    that:
+      - forensics_directory_list is defined
+      - forensics_directory_list | length > 0
+      - forensics_directory_list is iterable
+
+- name: test if item in forensics_directory_list is set correctly
+  assert:
+    that:
+      - item is defined
+      - item | length > 0
+  loop: "{{ forensics_directory_list }}"
+
+- name: test if forensics_file_list is set correctly
+  assert:
+    that:
+      - forensics_file_list is defined
+      - forensics_file_list | length > 0
+      - forensics_file_list is iterable
+
+- name: test if item in forensics_file_list is set correctly
+  assert:
+    that:
+      - item is defined
+      - item | length > 0
+  loop: "{{ forensics_file_list }}"
+
+- name: test if forensics_specific_file_list is set correctly
+  assert:
+    that:
+      - forensics_specific_file_list is defined
+      - forensics_specific_file_list | length > 0
+      - forensics_specific_file_list is iterable
+
+- name: test if item in forensics_specific_file_list is set correctly
+  assert:
+    that:
+      - item.path is defined
+      - item.path | length > 0
+      - item.pattern is defined
+      - item.pattern | length > 0
+  loop: "{{ forensics_specific_file_list }}"
