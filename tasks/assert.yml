@@ -17,6 +17,7 @@
     that:
       - item is defined
       - item | length > 0
+    quiet: yes
   loop: "{{ forensics_command_list }}"
 
 - name: test if forensics_directory_list is set correctly
@@ -31,6 +32,7 @@
     that:
       - item is defined
       - item | length > 0
+    quiet: yes
   loop: "{{ forensics_directory_list }}"
 
 - name: test if forensics_file_list is set correctly
@@ -45,6 +47,7 @@
     that:
       - item is defined
       - item | length > 0
+    quiet: yes
   loop: "{{ forensics_file_list }}"
 
 - name: test if forensics_specific_file_list is set correctly
@@ -61,4 +64,5 @@
       - item.path | length > 0
       - item.pattern is defined
       - item.pattern | length > 0
+    quiet: yes
   loop: "{{ forensics_specific_file_list }}"
