@@ -66,3 +66,5 @@
       - item.pattern | length > 0
     quiet: yes
   loop: "{{ forensics_specific_file_list }}"
+  loop_control:
+    label: "{{ item.path }}"
