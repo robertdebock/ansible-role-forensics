@@ -4,6 +4,7 @@
     that:
       - forensics_local_storage_path is defined
       - forensics_local_storage_path | length > 0
+    quiet: yes
 
 - name: test if forensics_command_list is set correctly
   assert:
@@ -11,6 +12,7 @@
       - forensics_command_list is defined
       - forensics_command_list | length > 0
       - forensics_command_list is iterable
+    quiet: yes
 
 - name: test if item in forensics_command_list is set correctly
   assert:
@@ -26,6 +28,7 @@
       - forensics_directory_list is defined
       - forensics_directory_list | length > 0
       - forensics_directory_list is iterable
+    quiet: yes
 
 - name: test if item in forensics_directory_list is set correctly
   assert:
@@ -41,6 +44,7 @@
       - forensics_file_list is defined
       - forensics_file_list | length > 0
       - forensics_file_list is iterable
+    quiet: yes
 
 - name: test if item in forensics_file_list is set correctly
   assert:
@@ -56,6 +60,7 @@
       - forensics_specific_file_list is defined
       - forensics_specific_file_list | length > 0
       - forensics_specific_file_list is iterable
+    quiet: yes
 
 - name: test if item in forensics_specific_file_list is set correctly
   assert:
