@@ -3,6 +3,7 @@
   file:
     path: "{{ forensics_local_storage_path }}/{{ object | dirname }}"
     state: directory
+    mode: "0750"
 
 - name: fetch files
   fetch:

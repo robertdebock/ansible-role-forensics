@@ -8,6 +8,7 @@
   file:
     path: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}/{{ object }}"
     state: directory
+    mode: "0750"
 
 - name: fetch files from {{ item.path }}
   fetch:

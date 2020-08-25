@@ -9,6 +9,7 @@
       copy:
         content: "{{ forensics_run_command.stdout }}"
         dest: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}/{{ object | replace(' ','-') }}.txt"
+        mode: "0640"
       delegate_to: localhost
       changed_when: no
   rescue:
