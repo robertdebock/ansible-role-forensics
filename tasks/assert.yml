@@ -3,14 +3,12 @@
   assert:
     that:
       - forensics_local_storage_path is defined
-      - forensics_local_storage_path | length > 0
     quiet: yes
 
 - name: test if forensics_command_list is set correctly
   assert:
     that:
       - forensics_command_list is defined
-      - forensics_command_list | length > 0
       - forensics_command_list is iterable
     quiet: yes
 
@@ -18,7 +16,6 @@
   assert:
     that:
       - item is defined
-      - item | length > 0
     quiet: yes
   loop: "{{ forensics_command_list }}"
 
@@ -26,7 +23,6 @@
   assert:
     that:
       - forensics_directory_list is defined
-      - forensics_directory_list | length > 0
       - forensics_directory_list is iterable
     quiet: yes
 
@@ -34,7 +30,6 @@
   assert:
     that:
       - item is defined
-      - item | length > 0
     quiet: yes
   loop: "{{ forensics_directory_list }}"
 
@@ -42,7 +37,6 @@
   assert:
     that:
       - forensics_file_list is defined
-      - forensics_file_list | length > 0
       - forensics_file_list is iterable
     quiet: yes
 
@@ -50,7 +44,6 @@
   assert:
     that:
       - item is defined
-      - item | length > 0
     quiet: yes
   loop: "{{ forensics_file_list }}"
 
@@ -58,7 +51,6 @@
   assert:
     that:
       - forensics_specific_file_list is defined
-      - forensics_specific_file_list | length > 0
       - forensics_specific_file_list is iterable
     quiet: yes
 
@@ -66,9 +58,7 @@
   assert:
     that:
       - item.path is defined
-      - item.path | length > 0
       - item.pattern is defined
-      - item.pattern | length > 0
     quiet: yes
   loop: "{{ forensics_specific_file_list }}"
   loop_control:
