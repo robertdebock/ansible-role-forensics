@@ -1,4 +1,5 @@
 ---
+
 - name: test if forensics_local_storage_path is set correctly
   assert:
     that:
