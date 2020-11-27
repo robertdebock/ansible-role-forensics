@@ -4,6 +4,7 @@
   assert:
     that:
       - forensics_local_storage_path is defined
+      - forensics_local_storage_path is string
     quiet: yes
 
 - name: test if forensics_command_list is set correctly
@@ -17,6 +18,7 @@
   assert:
     that:
       - item is defined
+      - item is string
     quiet: yes
   loop: "{{ forensics_command_list }}"
 
@@ -31,6 +33,7 @@
   assert:
     that:
       - item is defined
+      - item is string
     quiet: yes
   loop: "{{ forensics_directory_list }}"
 
@@ -45,6 +48,7 @@
   assert:
     that:
       - item is defined
+      - item is string
     quiet: yes
   loop: "{{ forensics_file_list }}"
 
@@ -59,7 +63,9 @@
   assert:
     that:
       - item.path is defined
+      - item.path is string
       - item.pattern is defined
+      - item.pattern is string
     quiet: yes
   loop: "{{ forensics_specific_file_list }}"
   loop_control:
