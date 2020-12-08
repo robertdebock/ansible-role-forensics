@@ -2,9 +2,9 @@
 
 Install and configure forensics on your system.
 
-|Travis|GitHub|Quality|Downloads|Version|
-|------|------|-------|---------|-------|
-|[![travis](https://travis-ci.com/robertdebock/ansible-role-forensics.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-forensics)|[![github](https://github.com/robertdebock/ansible-role-forensics/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-forensics/actions)|[![quality](https://img.shields.io/ansible/quality/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![downloads](https://img.shields.io/ansible/role/d/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-forensics.svg)](https://github.com/robertdebock/ansible-role-forensics/releases/)|
+|Travis|GitHub|GitLab|Quality|Downloads|Version|
+|------|------|------|-------|---------|-------|
+|[![travis](https://travis-ci.com/robertdebock/ansible-role-forensics.svg?branch=master)](https://travis-ci.com/robertdebock/ansible-role-forensics)|[![github](https://github.com/robertdebock/ansible-role-forensics/workflows/Ansible%20Molecule/badge.svg)](https://github.com/robertdebock/ansible-role-forensics/actions)|[![gitlab](https://gitlab.com/robertdebock/ansible-role-forensics/badges/master/pipeline.svg)](https://gitlab.com/robertdebock/ansible-role-forensics)|[![quality](https://img.shields.io/ansible/quality/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![downloads](https://img.shields.io/ansible/role/d/45300)](https://galaxy.ansible.com/robertdebock/forensics)|[![Version](https://img.shields.io/github/release/robertdebock/ansible-role-forensics.svg)](https://github.com/robertdebock/ansible-role-forensics/releases/)|
 
 ## [Example Playbook](#example-playbook)
 
@@ -166,10 +166,6 @@ image="debian" tag="stable" tox
 ## [License](#license)
 
 Apache-2.0
-
-## [Contributors](#contributors)
-
-I'd like to thank everybody that made contributions to this repository. It motivates me, improves the code and is just fun to collaborate.
 
 
 ## [Author Information](#author-information)
