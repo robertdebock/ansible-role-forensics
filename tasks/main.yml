@@ -7,31 +7,31 @@
   delegate_to: localhost
 
 - name: create {{ forensics_local_storage_path }}/{{ inventory_hostname_short }}
-  file:
+  ansible.builtin.file:
     path: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}"
     state: directory
     mode: "700"
 
 - name: collect files in directories
-  include_tasks: directory_collector.yml
+  ansible.builtin.include_tasks: directory_collector.yml
   loop: "{{ forensics_directory_list }}"
   loop_control:
     loop_var: object
 
 - name: collect files
-  include_tasks: file_collector.yml
+  ansible.builtin.include_tasks: file_collector.yml
   loop: "{{ forensics_file_list }}"
   loop_control:
     loop_var: object
 
 - name: collect command output
-  include_tasks: command_collector.yml
+  ansible.builtin.include_tasks: command_collector.yml
   loop: "{{ forensics_command_list }}"
   loop_control:
     loop_var: object
 
 - name: collect specific files in directories
-  include_tasks: specific_file_collector.yml
+  ansible.builtin.include_tasks: specific_file_collector.yml
   loop: "{{ forensics_specific_file_list }}"
   loop_control:
     loop_var: object
