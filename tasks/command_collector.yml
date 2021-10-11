@@ -6,6 +6,7 @@
         cmd: "{{ object }}"
       changed_when: no
       register: forensics_run_command
+
     - name: save output to {{ object | replace(' ','-') }}.txt
       ansible.builtin.copy:
         content: "{{ forensics_run_command.stdout }}"
@@ -14,6 +15,7 @@
       delegate_to: localhost
       changed_when: no
   rescue:
+
     - name: rescue when command failed.
       ansible.builtin.debug:
         msg: "Could not collect command {{ object }}"
