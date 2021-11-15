@@ -15,7 +15,6 @@
       delegate_to: localhost
       changed_when: no
   rescue:
-
     - name: rescue when command failed.
       ansible.builtin.debug:
         msg: "Could not collect command {{ object }}"
