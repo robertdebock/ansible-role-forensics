@@ -5,4 +5,4 @@
 repository:
   description: Install and configure forensics on your system.
   homepage: https://robertdebock.nl/
-  topics: forensics, ansible, molecule, tox, playbook
+  topics: forensics, security, system, ansible, molecule, tox, playbook
