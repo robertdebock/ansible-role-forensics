@@ -1,4 +1,4 @@
-# Ansible role [forensics](#forensics)
+# [Ansible role forensics](#forensics)
 
 Install and configure forensics on your system.
 
