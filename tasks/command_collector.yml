@@ -5,7 +5,8 @@
     - name: command_collector | Run command
       ansible.builtin.command:
         cmd: "{{ object }}"
-      changed_when: false
+      changed_when:
+        - false
       register: forensics_run_command
 
     - name: command_collector | Save output
@@ -14,7 +15,8 @@
         dest: "{{ forensics_local_storage_path }}/{{ inventory_hostname_short }}/{{ object | replace(' ', '-') }}.txt"
         mode: "0640"
       delegate_to: localhost
-      changed_when: false
+      changed_when:
+        - false
   rescue:
     - name: command_collector | Rescue when command failed.
       ansible.builtin.debug:
